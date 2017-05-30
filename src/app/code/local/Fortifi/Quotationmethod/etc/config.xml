@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Fortifi_Quotationmethod>
+      <version>1.0.0.0</version>
+    </Fortifi_Quotationmethod>
+  </modules>
+ 
+  <global>
+    <fieldsets>
+      <sales_convert_quote_payment>
+        <custom_field_one>
+          <to_order_payment>*</to_order_payment>
+        </custom_field_one>
+        <custom_field_two>
+          <to_order_payment>*</to_order_payment>
+        </custom_field_two>
+      </sales_convert_quote_payment>
+    </fieldsets>
+     
+    <helpers>
+      <quotationmethod>
+        <class>Fortifi_Quotationmethod_Helper</class>
+      </quotationmethod>
+    </helpers>
+ 
+    <blocks>
+      <quotationmethod>
+        <class>Fortifi_Quotationmethod_Block</class>
+      </quotationmethod>
+    </blocks>
+         
+    <models>
+      <quotationmethod>
+        <class>Fortifi_Quotationmethod_Model</class>
+      </quotationmethod>
+    </models>
+ 
+<!--    <resources>
+      <quotationmethod_setup>
+        <setup>
+          <module>Fortifi_Quotationmethod</module>
+        </setup>
+      </quotationmethod_setup>
+    </resources>
+-->
+  </global>
+
+  <default>
+    <payment>
+      <quotationmethod>
+        <active>1</active>
+        <model>quotationmethod/paymentmethod</model>
+        <order_status>pending</order_status>
+        <title>Quotation Payment Method</title>
+        <allowspecific>0</allowspecific>
+        <payment_action>sale</payment_action>
+      </quotationmethod>
+    </payment>
+  </default>
+   
+  <frontend>
+    <routers>
+      <quotationmethod>
+        <use>standard</use>
+        <args>
+          <module>Fortifi_Quotationmethod</module>
+          <frontName>quotationmethod</frontName>
+        </args>
+      </quotationmethod>
+    </routers>
+  </frontend>
+</config>
