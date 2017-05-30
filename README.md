@@ -1,2 +1,3 @@
 # Fortify_QuotationMethod
-Payment method that will quotation email to store owner upon completion
+A passthrough payment method that will send a quotation email to store owner upon completion.
+
